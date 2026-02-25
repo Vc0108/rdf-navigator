@@ -1,8 +1,8 @@
 """
 RDF Navigator v4 — Production Ready
 =====================================
-Backend    : Oxigraph (embedded, no separate server needed)
-Deployment : Streamlit Community Cloud
+Backend   : Oxigraph (embedded, no separate server needed)
+Deployment: Streamlit Community Cloud
 New Features:
   1. Export results as CSV / Excel
   2. Graph Statistics Dashboard
@@ -219,7 +219,7 @@ div[data-testid="metric-container"] div[data-testid="stMetricValue"] {
 [data-testid="stSidebar"] .stButton > button {
     background: rgba(255,255,255,0.15);
     border: 1px solid rgba(255,255,255,0.4);
-    color: black !important;
+    color: white! important;
     width: 100%;
     border-radius: 8px;
 }
@@ -1935,4 +1935,4 @@ ex:NorthAmerica rdfs:subClassOf ex:GlobalMarket .
 
 # ============================================================
 st.divider()
-st.caption("🕸️ RDF Navigator v4 · Oxigraph · Streamlit Cloud Ready · github.com/your-repo")
+st.caption("🕸️ RDF Navigator v4 · Oxigraph · Streamlit Cloud Ready · https://github.com/Vc0108/rdf-navigator")
