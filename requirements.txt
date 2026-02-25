@@ -1,0 +1,27 @@
+# RDF Navigator v4 — Requirements
+# Core
+streamlit>=1.35.0
+pandas>=2.0.0
+rdflib>=6.3.0
+
+# Embedded Triple Store (replaces Fuseki)
+pyoxigraph>=0.3.22
+
+# Graph Visualization
+pyvis>=0.3.2
+
+# OWL/RDFS Reasoning
+owlrl>=6.0.2
+
+# AI Assistant — FREE, no credit card needed
+# Get your free API key at https://console.groq.com
+groq>=0.9.0
+
+# File format support
+openpyxl>=3.1.0       # Excel read/write
+
+# Env vars
+python-dotenv>=1.0.0
+
+# HTTP (used for optional Fuseki fallback)
+requests>=2.31.0
