@@ -73,7 +73,7 @@ except ImportError:
 # PAGE CONFIG
 # ============================================================
 st.set_page_config(
-    page_title="🕸️ RDF Navigator",
+    page_title=" RDF Navigator",
     layout="wide",
     initial_sidebar_state="expanded",
     page_icon="🕸️"
@@ -219,7 +219,7 @@ div[data-testid="metric-container"] div[data-testid="stMetricValue"] {
 [data-testid="stSidebar"] .stButton > button {
     background: rgba(255,255,255,0.15);
     border: 1px solid rgba(255,255,255,0.4);
-    color: white !important;
+    color: black !important;
     width: 100%;
     border-radius: 8px;
 }
