@@ -73,7 +73,7 @@ except ImportError:
 # PAGE CONFIG
 # ============================================================
 st.set_page_config(
-    page_title="🕸️ RDF Navigator",
+    page_title="RDF Navigator",
     layout="wide",
     initial_sidebar_state="expanded",
     page_icon="🕸️"
@@ -211,7 +211,7 @@ div[data-testid="metric-container"] div[data-testid="stMetricValue"] {
     background: rgba(255,255,255,0.15) !important;
     border: 1px solid rgba(255,255,255,0.3) !important;
     border-radius: 8px;
-    color: white !important;
+    color: black !important;
 }
 [data-testid="stSidebar"] .stTextInput > div > div > input::placeholder {
     color: rgba(255,255,255,0.6) !important;
@@ -219,7 +219,7 @@ div[data-testid="metric-container"] div[data-testid="stMetricValue"] {
 [data-testid="stSidebar"] .stTextInput label {
     font-weight: 700 !important;
     font-size: 0.92rem !important;
-    color: white !important;
+    color: black !important;
     letter-spacing: 0.3px;
 }
 [data-testid="stSidebar"] .stButton > button {
@@ -929,7 +929,31 @@ st.sidebar.caption(f"Backend: **{store.get_backend_name().upper()}** ({'✅' if 
 st.sidebar.divider()
 
 # Namespace
-st.sidebar.subheader("Data Namespace")
+st.sidebar.subheader("3. Data Context")
+
+st.sidebar.markdown("""
+<style>
+/* Expander text black in sidebar */
+section[data-testid="stSidebar"] .stExpander,
+section[data-testid="stSidebar"] .stExpander *,
+section[data-testid="stSidebar"] .stExpander p,
+section[data-testid="stSidebar"] .stExpander li,
+section[data-testid="stSidebar"] .stExpander code {
+    color: black !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+with st.sidebar.expander("📝 View Examples"):
+    st.markdown("""
+    **Namespace URI:** The unique "web address" for your data entities.
+    * *Format:* `http://{domain}/{project}#`
+    * *Example:* `http://mycompany.com/finance#`
+
+    **Prefix:** A short nickname for the namespace.
+    * *Example:* `fin` (for finance)
+    """)
+
 custom_ns = st.sidebar.text_input("Namespace URI", value="http://example.org/data#")
 custom_prefix = st.sidebar.text_input("Prefix", value="ex")
 if not custom_ns.endswith(("#", "/")):
@@ -1507,7 +1531,7 @@ with tab_graph:
 
         net = Network(height="600px", width="100%", bgcolor="white", font_color="black")
         net.add_node(curr, label=navigator.shorten(curr),
-                     color="#EA73FA", size=35, shape="ellipse")
+                     color="#A34098", size=35, shape="ellipse")
 
         cnt = 0
         for direction, s, p, o in triples_v:
