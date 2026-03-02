@@ -1,8 +1,8 @@
 """
 RDF Navigator v4 — Production Ready
 =====================================
-Backend   : Oxigraph (embedded, no separate server needed)
-Deployment: Streamlit Community Cloud
+Backend    : Oxigraph (embedded, no separate server needed)
+Deployment : Streamlit Community Cloud
 New Features:
   1. Export results as CSV / Excel
   2. Graph Statistics Dashboard
@@ -73,7 +73,7 @@ except ImportError:
 # PAGE CONFIG
 # ============================================================
 st.set_page_config(
-    page_title=" RDF Navigator",
+    page_title="🕸️ RDF Navigator",
     layout="wide",
     initial_sidebar_state="expanded",
     page_icon="🕸️"
@@ -216,10 +216,16 @@ div[data-testid="metric-container"] div[data-testid="stMetricValue"] {
 [data-testid="stSidebar"] .stTextInput > div > div > input::placeholder {
     color: rgba(255,255,255,0.6) !important;
 }
+[data-testid="stSidebar"] .stTextInput label {
+    font-weight: 700 !important;
+    font-size: 0.92rem !important;
+    color: white !important;
+    letter-spacing: 0.3px;
+}
 [data-testid="stSidebar"] .stButton > button {
     background: rgba(255,255,255,0.15);
     border: 1px solid rgba(255,255,255,0.4);
-    color: white! important;
+    color: white !important;
     width: 100%;
     border-radius: 8px;
 }
@@ -924,28 +930,6 @@ st.sidebar.divider()
 
 # Namespace
 st.sidebar.subheader("Data Namespace")
-
-st.markdown("""
-<style>
-section[data-testid="stSidebar"] .stExpander,
-section[data-testid="stSidebar"] .stExpander * {
-    color: black !important;
-}
-</style>
-""", unsafe_allow_html=True)
-#this is the CSS for the example 
-with st.sidebar.expander("📝 View Examples"):
-    st.markdown("""
-    **Namespace URI:** The unique "web address" for your data entities.
-    * *Format:* `http://{domain}/{project}#`
-    * *Example:* `http://mycompany.com/finance#`
-    
-    **Prefix:** A short nickname for the namespace.
-    * *Example:* `fin` (for finance)
-    """)
-
-
-
 custom_ns = st.sidebar.text_input("Namespace URI", value="http://example.org/data#")
 custom_prefix = st.sidebar.text_input("Prefix", value="ex")
 if not custom_ns.endswith(("#", "/")):
@@ -1523,7 +1507,7 @@ with tab_graph:
 
         net = Network(height="600px", width="100%", bgcolor="white", font_color="black")
         net.add_node(curr, label=navigator.shorten(curr),
-                     color="#333333", size=35, shape="ellipse")
+                     color="#EA73FA", size=35, shape="ellipse")
 
         cnt = 0
         for direction, s, p, o in triples_v:
@@ -1935,4 +1919,4 @@ ex:NorthAmerica rdfs:subClassOf ex:GlobalMarket .
 
 # ============================================================
 st.divider()
-st.caption("🕸️ RDF Navigator v4 · Oxigraph · Streamlit Cloud Ready · https://github.com/Vc0108/rdf-navigator")
+st.caption("🕸️ RDF Navigator v4 · Oxigraph · Streamlit Cloud Ready · github.com/your-repo")
